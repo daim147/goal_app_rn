@@ -1,14 +1,21 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, { useState } from "react";
+import { Button, StyleSheet, Text, View } from "react-native";
+import Goals from "./components/Goals";
 import InputContainer from "./components/InputContainer";
 
 export default function App() {
+  const [modal, setModal] = useState(false);
+  const [goals, setGoals] = useState([]);
   return (
     <View style={styles.container}>
-      <Text>Tesing App</Text>
-      <InputContainer />
-      <StatusBar style="dark" />
+      <Text style={styles.header}>Goal App</Text>
+      <InputContainer modal={modal} setModal={setModal} addGoal={setGoals} />
+      <View>
+        <Button onPress={setModal.bind(this, true)} title="ADD" />
+      </View>
+      <Goals goals={goals} setGoals={setGoals} />
+      <StatusBar style="light" />
     </View>
   );
 }
@@ -16,8 +23,15 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#a84242",
-    alignItems: "center",
-    justifyContent: "center",
+    padding: 50,
+    backgroundColor: "#e4e2e2",
+    // justifyContent: "center",
+  },
+  header: {
+    fontSize: 40,
+    textAlign: "center",
+    marginVertical: 20,
+    color: "#a9a9ac",
+    fontWeight: "700",
   },
 });
