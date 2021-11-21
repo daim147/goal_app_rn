@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TextInput,
   Alert,
+  KeyboardAvoidingView,
 } from "react-native";
 
 let key = 1;
@@ -19,7 +20,7 @@ const InputContainer = (props) => {
       statusBarTranslucent={true}
       visible={props.modal}
     >
-      <View style={styles.modal}>
+      <KeyboardAvoidingView style={styles.modal} behavior="padding">
         <TextInput
           style={styles.input}
           placeholder="Enter Goal"
@@ -51,7 +52,7 @@ const InputContainer = (props) => {
             />
           </View>
         </View>
-      </View>
+      </KeyboardAvoidingView>
     </Modal>
   );
 };
