@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 50,
     backgroundColor: "#e4e2e2",
-    // justifyContent: "center",
   },
   header: {
     fontSize: 40,

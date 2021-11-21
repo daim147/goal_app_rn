@@ -2,7 +2,6 @@ import React from "react";
 import { Text, TouchableOpacity, View, StyleSheet } from "react-native";
 
 const Goal = (props) => {
-  //   console.log(props.deleteGoal.toString());
   return (
     <TouchableOpacity activeOpacity={0.8} onPress={props.deleteGoal}>
       <View style={styles.goal}>
@@ -20,7 +19,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 5,
     borderColor: "#cacaca",
     borderWidth: 1,
-    // ma,
   },
   goalText: {
     fontSize: 18,

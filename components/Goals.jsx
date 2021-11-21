@@ -3,7 +3,6 @@ import { FlatList, View, StyleSheet } from "react-native";
 import Goal from "./Goal";
 
 const Goals = function (props) {
-  console.log(props);
   return (
     <View style={styles.goals}>
       <FlatList
